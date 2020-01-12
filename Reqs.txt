@@ -1,0 +1,29 @@
+Cerebral Palsy
+
+Power BI - Graphs
+ML - Gesture
+Edge Computing - Retrieving images as input from the picam
+Cloud - Vitals
+
+Diet Plan - Dataset = Cloud
+Saliva control - Gesture
+Learning Difficulty - Voice Recognition - Cloud 
+Emotional well being ( distress ) - Face Recognition
+Emergency Light - IoT
+Health Monitoring - IoT
+Thermostat - IoT
+
+Sensors
+pycam
+ultrasonic sensors
+light sensors
+heart rate sensor
+temeprature sensor
+buzzer
+
+wheels
+hankey - servo motor
+
+
+
+
