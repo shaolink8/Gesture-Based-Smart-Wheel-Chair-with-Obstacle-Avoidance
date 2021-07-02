@@ -1,12 +1,7 @@
-# Copyright (c) Microsoft. All rights reserved.
-# Licensed under the MIT license. See LICENSE file in https://github.com/Azure-Samples/azure-iot-samples-python/archive/master.zip
-# geektechstuff
-
 import random
 import time
 import sys
 
-# imports the modules for the sensor
 import RPi.GPIO as GPIO
 import time
 
@@ -22,8 +17,6 @@ def handle_heartrate(chl):
 
     channel = chl
     count = count + 1
-    
-    # print('Count is {}'.format(count))
     
     if not doCounting:
 
@@ -50,7 +43,6 @@ def handle_heartrate(chl):
             count = 0
     return heartbeat1
                                    
-# pin definition
 channel = 0
 heartPin = 16
 ledPin = 40
@@ -61,13 +53,12 @@ startTime = 0.0
 currentTime = 0.0
 doMeasureHeartRate = False
 
-# pin setup
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(heartPin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(ledPin, GPIO.OUT)
 GPIO.setup(butPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-print('Program running... Press Ctrl+C to exit')
+print('Program running, press Ctrl+C to exit')
 
 try:
     
@@ -79,7 +70,7 @@ try:
             
             if not doMeasureHeartRate:
                 
-                print('Measuring heart rate...')
+                print('Measuring Heart Rate')
                 
                 doMeasureHeartRate = True;
                 GPIO.output(ledPin, True)
@@ -107,7 +98,7 @@ try:
             
             if currentTime - startTime > 15:
                 
-                print('Still waiting for heart beat...')
+                print('Still waiting for Heart Beat...')
                                             
                 startTime = time.time()
                 count = 0
@@ -125,24 +116,19 @@ finally:
     GPIO.cleanup()    
 
 
-
-
-# Using the Python Device SDK for IoT Hub:
-#   https://github.com/Azure/azure-iot-sdk-python
-# The sample connects to a device-specific MQTT endpoint on your IoT Hub.
+# The sample connects to a device-specific MQTT endpoint on your IoT Hub
 import iothub_client
-# pylint: disable=E0611
+
 from iothub_client import IoTHubClient, IoTHubClientError, IoTHubTransportProvider, IoTHubClientResult
 from iothub_client import IoTHubMessage, IoTHubMessageDispositionResult, IoTHubError, DeviceMethodReturnValue
 
-# The device connection string to authenticate the device with your IoT hub.
-# Using the Azure CLI:
-# az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyNodeDevice --output table
+# The device connection string to authenticate the device with your IoT hub
 CONNECTION_STRING = "HostName=G6NUS2019.azure-devices.net;DeviceId=ruchika;SharedAccessKey=/8oRKSgCxpw/wz/shB+Gx7GhMnVZ61RGxDaApWFnn20="
 
-# Using the MQTT protocol.
+# Using the MQTT protocol
 PROTOCOL = IoTHubTransportProvider.MQTT
 MESSAGE_TIMEOUT = 10000
+
 # Define the JSON message to send to IoT Hub.
 HEARTBEAT = handle_heartrate(channel)
 MSG_TXT = "{\"Heartbeat\": %.2f}"
@@ -170,7 +156,7 @@ def iothub_client_telemetry_sample_run():
             
 
             # Send the message.
-            print( "GeekTechStuff Azure Sending Message: %s" % message.get_string() )
+            print( "Sending Message: %s" % message.get_string() )
             client.send_event_async(message, send_confirmation_callback, None)
             time.sleep(30)
 

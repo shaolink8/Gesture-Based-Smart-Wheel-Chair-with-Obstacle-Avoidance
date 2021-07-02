@@ -14,3 +14,13 @@
 
 1,11 - Forward
 13,14 - Reverse
+
+P1 signifies forward movement of right wheel.
+
+P11 signifies forward movement of left wheel.
+
+P1 P11 signifies forward movement on both the wheels.
+
+P13 P14 signifies reverse movement.
+
+If 0, then the movement is restricted for a given pin.
