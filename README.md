@@ -1,12 +1,12 @@
-Gesture Based Smart Wheel Chair with Obstacle Avoidance
+# Gesture Based Smart Wheel Chair with Obstacle Avoidance
 
 This is a Smart Assistant system for people suffering from Cerebral Palsy.
 
-For a detailed description of the project, you can refer to the "Smart Assistance System for people with Cerebral Palsy.pptx" file.
+### For a detailed description of the project, you can refer to the "Smart Assistance System for people with Cerebral Palsy.pptx" file.
 
 Here, you'll find two Javascript files, "Actuator.js" and "Gesture.js". 
 
-- GESTURE RECOGNITION
+## GESTURE RECOGNITION
 
 In the "Gesture.js" file, we're taking the input from the user in the form of a gesture.
 
@@ -22,7 +22,7 @@ The variable x will be assigned as 2 and x will be sent over the radio channel t
 
 This radio connection is made possible thanks to the line "radio.setGroup(8)".
 
-- ACTUATORS
+## ACTUATORS
 
 This receiving, second Microbit works on the "Actuator.js" code.
 
@@ -44,7 +44,7 @@ So this is done to make the chair turn right based on the input received from th
 Similarly, for each input gesture, its corresponding x value is produced and transferred over the channel so that the receiving Microbit can accordingly power the required pins to run the motors.
 In case of a down gesture, no pins are powered, hence, all pins have been set to LOW and the wheelchair stops.
 
-- OBSTACLE AVOIDANCE
+## OBSTACLE AVOIDANCE
 
 In the "Gesture.js" code, we have specified a distance threshold for the 3 ultrasonic sensors installed on the left, front and right of the wheelchair.
 This is done to detect obstacle and prevent collision automatically. In case any threshold is breached, the same function as a "down" gesture which suggests the wheelchair to stop, is repeated and x is assigned as 3 and sent over the radio channel.
@@ -54,11 +54,11 @@ Different hexadecimal displays have been used to represent different gestures an
 
 The "microbit-Actuator.hex" and "microbit-Final-Gesture.hex" files are the compiled version of the code and can be directly uploaded to the Microbit.
 
-- VOICE MEMO
+## VOICE MEMO
 
 The "memo through voice recognition.py" file is used to save voice memos for the patient to overcome the rare symptom of memory loss and store any crucial information in the form of a voice memo.
 
-- VITALS MONITORING
+## VITALS MONITORING
 
 The "Heartbeat Sensor with IoT Hub.py" file is used to monitor the patient's heartbeat, and send the values on IoT Hub at the same time. These values can be checked up on time to time by any assigned person.
 
