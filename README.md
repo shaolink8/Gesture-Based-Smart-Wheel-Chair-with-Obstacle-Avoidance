@@ -6,6 +6,10 @@ This is a Smart Assistant system for people suffering from Cerebral Palsy.
 
 Here, you'll find two Javascript files, "Actuator.js" and "Gesture.js". 
 
+For a running prototype, refer to the videos on this link : 
+
+https://drive.google.com/drive/folders/1MZFZXqfW7zoOCTao5OMHf5sNVnepXg2K?usp=sharing
+
 ## GESTURE RECOGNITION
 
 In the "Gesture.js" file, we're taking the input from the user in the form of a gesture.
